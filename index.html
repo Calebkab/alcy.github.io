@@ -1,60 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon site - Alcy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caleb Kabila - Portfolio</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            min-height: 100vh;
+            text-align: center;
+            padding: 60px 20px;
         }
-        .container {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            margin: 0 auto;
-            backdrop-filter: blur(10px);
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
         }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+
+        header .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
         }
-        .chat-icon {
-            font-size: 80px;
-            margin: 30px 0;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        button {
-            background: white;
-            color: #764ba2;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
+
+        header .institution {
+            font-size: 1.1em;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 8px 20px;
             border-radius: 50px;
-            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1e3c72;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* Sections */
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #2a5298;
+            border-bottom: 3px solid #2a5298;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        /* Compétences */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             margin-top: 20px;
         }
-        button:hover {
+
+        .skill-tag {
+            background: #e9ecef;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: #2a5298;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #2a5298;
+            color: white;
             transform: scale(1.05);
+        }
+
+        /* Formation */
+        .education-item {
+            margin-top: 15px;
+        }
+
+        .education-item h3 {
+            color: #2a5298;
+            margin-bottom: 5px;
+        }
+
+        .education-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: inline-block;
+            margin: 10px 20px;
+            font-size: 1.1em;
+        }
+
+        .contact-item a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #1e3c72;
+            transform: scale(1.05);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            margin-right: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1e3c72;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .contact-item {
+                display: block;
+                margin: 15px 0;
+            }
+            
+            .btn-whatsapp {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>Caleb Kabila</h1>
+        <div class="title">Étudiant en Informatique | Développeur en devenir</div>
+        <div class="institution">🎓 Université Protestante de Lubumbashi - Bac 4 Informatique</div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#education">Formation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <div class="chat-icon">💬</div>
-        <h1>Bienvenue sur mon site !</h1>
-        <p>Étudiant • Passionné de tech</p>
-        <button onclick="alert('Salut ! Merci de visiter mon site 🚀')">Me contacter</button>
+        <!-- À propos -->
+        <section id="about" class="section">
+            <h2>📖 À propos de moi</h2>
+            <p style="margin-top: 15px;">
+                Je suis <strong>Caleb Kabila</strong>, étudiant en <strong>Baccalauréat 4 Informatique</strong> à l'<strong>Université Protestante de Lubumbashi</strong>. 
+                Passionné par le développement web, les nouvelles technologies et la création de solutions numériques. 
+                Rigoureux et curieux, je suis constamment à la recherche de nouveaux défis pour apprendre et progresser dans le domaine de l'informatique.
+            </p>
+        </section>
+
+        <!-- Compétences -->
+        <section id="skills" class="section">
+            <h2>💻 Compétences techniques</h2>
+            <div class="skills">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Développement Web</span>
+                <span class="skill-tag">Algorithmique</span>
+                <span class="skill-tag">Base de données</span>
+                <span class="skill-tag">Réseaux</span>
+            </div>
+        </section>
+
+        <!-- Formation -->
+        <section id="education" class="section">
+            <h2>🎓 Formation</h2>
+            <div class="education-item">
+                <h3>Université Protestante de Lubumbashi (UPL)</h3>
+                <div class="education-date">2023 - Présent</div>
+                <p><strong>Baccalauréat 4 en Informatique</strong></p>
+                <p>Cours suivis : Algorithmique avancée, Développement web, Base de données, Programmation orientée objet, Architecture des ordinateurs, Réseaux et sécurité informatique.</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <h2>📞 Contact</h2>
+            <div class="contact-card">
+                <div class="contact-item">
+                    📧 <a href="mailto:calebkabila895@gmail.com">calebkabila895@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    📱 <a href="tel:+243973780909">0973780909</a>
+                </div>
+                <div class="contact-item">
+                    💬 <a href="https://wa.me/243973780909" target="_blank">WhatsApp</a>
+                </div>
+                <div>
+                    <a href="https://wa.me/243973780909" class="btn btn-whatsapp" target="_blank">📱 Me contacter sur WhatsApp</a>
+                    <a href="mailto:calebkabila895@gmail.com" class="btn">✉️ M'envoyer un email</a>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Caleb Kabila - Étudiant en Informatique</p>
+        <p>📞 0973780909 | 📧 calebkabila895@gmail.com</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Université Protestante de Lubumbashi - Bac 4 Informatique</p>
+    </footer>
+
 </body>
 </html>
