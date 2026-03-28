@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caleb Kabila - Portfolio</title>
+    <title>Caleb Kabila - Master en Systèmes Informatiques</title>
     <style>
         * {
             margin: 0;
@@ -12,44 +12,102 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            color: #2d3436;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
 
+        /* Header moderne avec animation */
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
         header h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease;
+            position: relative;
+            z-index: 1;
         }
 
         header .title {
-            font-size: 1.2em;
+            font-size: 1.3em;
+            opacity: 0.95;
             margin-bottom: 15px;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            z-index: 1;
         }
 
         header .institution {
             font-size: 1.1em;
             background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
             display: inline-block;
-            padding: 8px 20px;
+            padding: 10px 25px;
             border-radius: 50px;
+            margin-top: 15px;
+            animation: fadeInUp 1s ease 0.2s both;
+            position: relative;
+            z-index: 1;
         }
 
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation stylisée */
         nav {
-            background: #1e3c72;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
             padding: 15px 0;
             text-align: center;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
         nav ul {
@@ -58,52 +116,69 @@
 
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav ul li a {
-            color: white;
+            color: #667eea;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 25px;
         }
 
         nav ul li a:hover {
-            color: #ffd700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
         }
 
+        /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
+        /* Sections avec design moderne */
         .section {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .section h2 {
-            color: #2a5298;
-            border-bottom: 3px solid #2a5298;
-            display: inline-block;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-size: 2em;
         }
 
+        /* Style pour les contenus avec image */
         .content-with-image {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
-            margin-top: 20px;
         }
 
         .content-text {
-            flex: 2;
+            flex: 1.5;
+            font-size: 1.1em;
+            line-height: 1.8;
         }
 
         .content-image {
@@ -113,15 +188,17 @@
 
         .content-image img {
             max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s;
         }
 
         .content-image img:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
+        /* Compétences en badges modernes */
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -130,454 +207,140 @@
         }
 
         .skill-tag {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 12px 28px;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             color: white;
-            transition: 0.3s;
+            transition: all 0.3s;
             font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
         }
 
         .skill-tag:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102,126,234,0.4);
         }
 
+        /* Cartes certifications modernes */
         .formations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             margin-top: 20px;
         }
 
         .formation-card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            cursor: pointer;
         }
 
         .formation-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .formation-img {
             width: 100%;
-            height: 200px;
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #e9ecef;
         }
 
         .formation-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .formation-card:hover .formation-img img {
+            transform: scale(1.1);
         }
 
         .formation-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .formation-info h3 {
-            color: #2a5298;
-            margin-bottom: 10px;
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.4em;
         }
 
         .formation-info p {
-            color: #666;
+            color: #636e72;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .formation-badge {
             display: inline-block;
-            background: #2a5298;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-top: 10px;
-        }
-
-        .contact-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .contact-item {
-            display: inline-block;
-            margin: 10px 20px;
-            font-size: 1.1em;
-        }
-
-        .contact-item a {
-            color: #2a5298;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #2a5298;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin: 10px 5px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #1e3c72;
-            transform: scale(1.05);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #1e3c72;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .content-with-image {
-                flex-direction: column;
-            }
-            .content-image {
-                order: -1;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            .contact-item {
-                display: block;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Caleb Kabila</h1>
-        <div class="title">Étudiant en Informatique | Développeur en devenir</div>
-        <div class="institution">🎓 Université Protestante de Lubumbashi - Bac 4 Informatique</div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#education">Formation</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- À propos -->
-        <section id="about" class="section">
-            <h2>📖 À propos de moi</h2>
-            <div class="content-with-image">
-                <div class="content-text">
-                    <p>Je suis <strong>Caleb Kabila</strong>, étudiant en <strong>Baccalauréat 4 Informatique</strong> à l'<strong>Université Protestante de Lubumbashi</strong>.</p>
-                    <p style="margin-top: 15px;">Passionné par les nouvelles technologies, je me forme actuellement en <strong>CCNA</strong> et <strong>Cybersécurité</strong>.</p>
-                </div>
-                <div class="content-image">
-                    <img src="student.png" alt="Étudiant en informatique">
-                </div>
-            </div>
-        </section>
-
-        <!-- Compétences -->
-        <section id="skills" class="section">
-            <h2>💻 Compétences techniques</h2>
-            <div class="content-with-image">
-                <div class="content-text">
-                    <div class="skills-list">
-                        <span class="skill-tag">🌐 Développement Web</span>
-                        <span class="skill-tag">📡 Réseaux</span>
-                        <span class="skill-tag">📶 Télécommunications</span>
-                        <span class="skill-tag">🔒 Cybersécurité</span>
-                        <span class="skill-tag">📱 Développement Mobile</span>
-                        <span class="skill-tag">🧠 Réseaux de Neurones</span>
-                    </div>
-                </div>
-                <div class="content-image">
-                    <img src="neurone.jpg" alt="Réseau de neurones">
-                </div>
-            </div>
-        </section>
-
-        <!-- Formation universitaire -->
-        <section id="education" class="section">
-            <h2>🎓 Formation universitaire</h2>
-            <div>
-                <h3>Université Protestante de Lubumbashi (UPL)</h3>
-                <p style="color: #666; margin: 10px 0;">2023 - Présent</p>
-                <p><strong>Baccalauréat 4 en Informatique</strong></p>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section id="certifications" class="section">
-            <h2>📜 Certifications & formations</h2>
-            <div class="formations-grid">
-                <div class="formation-card">
-                    <div class="formation-img">
-                        <img src="ccnajpg" alt="CCNA">
-                    </div>
-                    <div class="formation-info">
-                        <h3>CCNA (Cisco)</h3>
-                        <p>Fondamentaux des réseaux : routage, commutation, IPv4/IPv6, sécurité réseau.</p>
-                        <span class="formation-badge">📡 En cours</span>
-                    </div>
-                </div>
-
-                <div class="formation-card">
-                    <div class="formation-img">
-                        <img src="python.jpg" alt="Python" onerror="this.src='https://placehold.co/400x200/1e3c72/white?text=Python'">
-                    </div>
-                    <div class="formation-info">
-                        <h3>Introduction Python - Cisco</h3>
-                        <p>Bases de la programmation Python : variables, fonctions, objets et automatisation.</p>
-                        <span class="formation-badge">🐍 Certifié</span>
-                    </div>
-                </div>
-
-                <div class="formation-card">
-                    <div class="formation-img">
-                        <img src="cybersecurite.jpg" alt="Cybersécurité" onerror="this.src='https://placehold.co/400x200/1e3c72/white?text=Cybers%C3%A9curit%C3%A9'">
-                    </div>
-                    <div class="formation-info">
-                        <h3>Principes de cybersécurité - Cisco</h3>
-                        <p>Analyse des menaces, cryptographie, sécurité des réseaux et bonnes pratiques.</p>
-                        <span class="formation-badge">🔒 En cours</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <h2>📞 Contact</h2>
-            <div class="contact-card">
-                <div class="contact-item">
-                    📧 <a href="mailto:calebkabila895@gmail.com">calebkabila895@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    📱 <a href="tel:+243973780909">0973780909</a>
-                </div>
-                <div class="contact-item">
-                    💬 <a href="https://wa.me/243973780909" target="_blank">WhatsApp</a>
-                </div>
-                <div>
-                    <a href="https://wa.me/243973780909" class="btn btn-whatsapp" target="_blank">📱 WhatsApp</a>
-                    <a href="mailto:calebkabila895@gmail.com" class="btn">✉️ Email</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Caleb Kabila - Étudiant en Informatique</p>
-        <p>📞 0973780909 | 📧 calebkabila895@gmail.com</p>
-    </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELCOME </title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-        }
-
-        header .title {
-            font-size: 1.2em;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        header .institution {
-            font-size: 1.1em;
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 50px;
-            margin-top: 10px;
-        }
-
-        /* Navigation */
-        nav {
-            background: #1e3c72;
-            padding: 15px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        /* Sections */
-        .section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .section h2 {
-            color: #2a5298;
-            border-bottom: 3px solid #2a5298;
-            display: inline-block;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-        }
-
-        /* Compétences */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .skill-tag {
-            background: #e9ecef;
-            padding: 8px 18px;
+            padding: 6px 15px;
             border-radius: 25px;
-            font-weight: bold;
-            color: #2a5298;
-            transition: 0.3s;
+            font-size: 0.8em;
+            font-weight: 600;
         }
 
-        .skill-tag:hover {
-            background: #2a5298;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        /* Formation */
-        .education-item {
-            margin-top: 15px;
-        }
-
-        .education-item h3 {
-            color: #2a5298;
-            margin-bottom: 5px;
-        }
-
-        .education-date {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        /* Contact */
+        /* Contact card */
         .contact-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
-            margin-top: 15px;
+            color: white;
         }
 
         .contact-item {
             display: inline-block;
-            margin: 10px 20px;
+            margin: 15px 25px;
             font-size: 1.1em;
         }
 
         .contact-item a {
-            color: #2a5298;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         .contact-item a:hover {
             text-decoration: underline;
+            opacity: 0.9;
         }
 
         .btn {
             display: inline-block;
-            background: #2a5298;
-            color: white;
-            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            padding: 12px 35px;
             border-radius: 50px;
             text-decoration: none;
-            margin-top: 20px;
-            transition: 0.3s;
-            font-weight: bold;
+            margin: 15px 10px;
+            transition: all 0.3s;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
-            background: #1e3c72;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .btn-whatsapp {
             background: #25D366;
-            margin-right: 10px;
+            color: white;
         }
 
         .btn-whatsapp:hover {
@@ -587,14 +350,10 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
-            background: #1e3c72;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
         }
 
         /* Responsive */
@@ -608,18 +367,25 @@
                 margin: 10px 0;
             }
             
+            .content-with-image {
+                flex-direction: column;
+            }
+            
+            .content-image {
+                order: -1;
+            }
+            
             .contact-item {
                 display: block;
                 margin: 15px 0;
             }
             
-            .btn-whatsapp {
-                margin-right: 0;
-                margin-bottom: 10px;
+            .section {
+                padding: 25px;
             }
             
-            .section {
-                padding: 20px;
+            .formations-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -628,82 +394,148 @@
 
     <header>
         <h1>Caleb Kabila</h1>
-        <div class="title">Étudiant en Informatique | Développeur en devenir</div>
-        <div class="institution">🎓 Université Protestante de Lubumbashi - Bac 4 Informatique</div>
+        <div class="title">Master en Systèmes Informatiques | Architecte Digital</div>
+        <div class="institution">🎓 Université Protestante de Lubumbashi - Master en Systèmes Informatiques</div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#education">Formation</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">✨ À propos</a></li>
+            <li><a href="#skills">💡 Compétences</a></li>
+            <li><a href="#education">📚 Formation</a></li>
+            <li><a href="#certifications">🏅 Certifications</a></li>
+            <li><a href="#contact">📞 Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <!-- À propos -->
         <section id="about" class="section">
-            <h2>📖 À propos de moi</h2>
-            <p style="margin-top: 15px;">
-                Je suis <strong>Caleb Kabila</strong>, étudiant en <strong>Baccalauréat 4 Informatique</strong> à l'<strong>Université Protestante de Lubumbashi</strong>. 
-                Passionné par le développement web, les nouvelles technologies et la création de solutions numériques. 
-                Rigoureux et curieux, je suis constamment à la recherche de nouveaux défis pour apprendre et progresser dans le domaine de l'informatique.
-            </p>
+            <h2>✨ À propos de moi</h2>
+            <div class="content-with-image">
+                <div class="content-text">
+                    <p>Je suis <strong>Caleb Kabila</strong>, étudiant en <strong>Master en Systèmes Informatiques</strong> à l'<strong>Université Protestante de Lubumbashi</strong>.</p>
+                    <p style="margin-top: 20px;">Passionné par l'innovation technologique, je me spécialise en <strong>CCNA</strong> et <strong>Cybersécurité</strong> pour maîtriser les infrastructures réseau et la protection des systèmes d'information.</p>
+                    <p style="margin-top: 20px;">Mon ambition : devenir un expert en architectures systèmes et contribuer à la transformation digitale en Afrique.</p>
+                </div>
+                <div class="content-image">
+                    <img src="student.png" alt="Caleb Kabila - Master en Systèmes Informatiques">
+                </div>
+            </div>
         </section>
 
         <!-- Compétences -->
         <section id="skills" class="section">
-            <h2>💻 Compétences techniques</h2>
-            <div class="skills">
-                <span class="skill-tag">HTML5 / CSS3</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Git & GitHub</span>
-                <span class="skill-tag">Développement Web</span>
-                <span class="skill-tag">Algorithmique</span>
-                <span class="skill-tag">Base de données</span>
-                <span class="skill-tag">Réseaux</span>
+            <h2>💡 Compétences techniques</h2>
+            <div class="content-with-image">
+                <div class="content-text">
+                    <div class="skills-list">
+                        <span class="skill-tag">🌐 Développement Web</span>
+                        <span class="skill-tag">📡 Réseaux & Infrastructures</span>
+                        <span class="skill-tag">📶 Télécommunications</span>
+                        <span class="skill-tag">🔒 Cybersécurité</span>
+                        <span class="skill-tag">📱 Développement Mobile</span>
+                        <span class="skill-tag">🧠 Réseaux de Neurones & IA</span>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="neurone.jpg" alt="Réseaux de neurones - Intelligence Artificielle">
+                </div>
             </div>
         </section>
 
-        <!-- Formation -->
+        <!-- Formation universitaire -->
         <section id="education" class="section">
-            <h2>🎓 Formation</h2>
-            <div class="education-item">
-                <h3>Université Protestante de Lubumbashi (UPL)</h3>
-                <div class="education-date">2023 - Présent</div>
-                <p><strong>Baccalauréat 4 en Informatique</strong></p>
-                <p>Cours suivis : Algorithmique avancée, Développement web, Base de données, Programmation orientée objet, Architecture des ordinateurs, Réseaux et sécurité informatique.</p>
+            <h2>📚 Parcours académique</h2>
+            <div style="margin-top: 20px;">
+                <h3 style="color: #667eea; font-size: 1.5em;">Université Protestante de Lubumbashi (UPL)</h3>
+                <p style="color: #636e72; font-size: 1.1em; margin: 10px 0;">2023 - Présent</p>
+                <p style="font-size: 1.1em;"><strong>🎓 Master en Systèmes Informatiques</strong></p>
+                <p style="margin-top: 15px; color: #2d3436;">Spécialisation : Architecture des systèmes, Sécurité informatique, Réseaux avancés, Intelligence Artificielle, Cloud Computing, et Gouvernance des systèmes d'information.</p>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="section">
+            <h2>🏅 Certifications & formations</h2>
+            <div class="formations-grid">
+                <div class="formation-card">
+                    <div class="formation-img">
+                        <img src="ccnajpg" alt="CCNA Cisco">
+                    </div>
+                    <div class="formation-info">
+                        <h3>CCNA - Cisco</h3>
+                        <p>Maîtrise des fondamentaux réseaux : routage, commutation, IPv4/IPv6, protocoles avancés, sécurité réseau et dépannage.</p>
+                        <span class="formation-badge">📡 En cours de certification</span>
+                    </div>
+                </div>
+
+                <div class="formation-card">
+                    <div class="formation-img">
+                        <img src="python.jpg" alt="Python Programming" onerror="this.src='https://placehold.co/400x200/667eea/white?text=Python'">
+                    </div>
+                    <div class="formation-info">
+                        <h3>Python - Cisco Networking Academy</h3>
+                        <p>Programmation Python : algorithmes, structures de données, POO, automatisation des tâches réseau et développement d'outils de sécurité.</p>
+                        <span class="formation-badge">🐍 Certifié</span>
+                    </div>
+                </div>
+
+                <div class="formation-card">
+                    <div class="formation-img">
+                        <img src="cybersecurite.jpg" alt="Cybersécurité Cisco" onerror="this.src='https://placehold.co/400x200/667eea/white?text=Cybers%C3%A9curit%C3%A9'">
+                    </div>
+                    <div class="formation-info">
+                        <h3>Cybersécurité - Cisco</h3>
+                        <p>Analyse des menaces, cryptographie, sécurité des réseaux, gestion des incidents, gouvernance et conformité.</p>
+                        <span class="formation-badge">🔒 En cours</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section id="contact" class="section">
-            <h2>📞 Contact</h2>
+            <h2>📞 Restons connectés</h2>
             <div class="contact-card">
                 <div class="contact-item">
                     📧 <a href="mailto:calebkabila895@gmail.com">calebkabila895@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    📱 <a href="tel:+243973780909">0973780909</a>
+                    📱 <a href="tel:+243973780909">+243 973 780 909</a>
                 </div>
                 <div class="contact-item">
                     💬 <a href="https://wa.me/243973780909" target="_blank">WhatsApp</a>
                 </div>
                 <div>
-                    <a href="https://wa.me/243973780909" class="btn btn-whatsapp" target="_blank">📱 Me contacter sur WhatsApp</a>
-                    <a href="mailto:calebkabila895@gmail.com" class="btn">✉️ M'envoyer un email</a>
+                    <a href="https://wa.me/243973780909" class="btn btn-whatsapp" target="_blank">📱 WhatsApp direct</a>
+                    <a href="mailto:calebkabila895@gmail.com" class="btn">✉️ Envoyer un email</a>
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Caleb Kabila - Étudiant en Informatique</p>
-        <p>📞 0973780909 | 📧 calebkabila895@gmail.com</p>
-        <p style="margin-top: 10px; font-size: 0.9em;">Université Protestante de Lubumbashi - Bac 4 Informatique</p>
+        <p>&copy; 2025 Caleb Kabila - Master en Systèmes Informatiques</p>
+        <p style="margin-top: 10px;">📞 +243 973 780 909 | 📧 calebkabila895@gmail.com</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">🌐 Développement Web | 📡 Réseaux | 🔒 Cybersécurité | 📱 Mobile | 🧠 IA</p>
     </footer>
 
+    <script>
+        // Smooth scroll pour les liens de navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
