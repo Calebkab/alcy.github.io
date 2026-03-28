@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2d3436;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+header .title {
+    font-size: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+
+header .institution {
+    font-size: 1.1em;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navigation */
+nav {
+    background: rgba(255,255,255,0.95);
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* Sections */
+.section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Compétences */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Cartes certifications */
+.formations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.formation-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.formation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.formation-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.formation-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.formation-card:hover .formation-img img {
+    transform: scale(1.1);
+}
+
+.formation-info {
+    padding: 20px;
+}
+
+.formation-info h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.formation-info p {
+    color: #636e72;
+}
+
+.formation-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+/* Contact card */
+.contact-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.contact-item {
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 1.1em;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    margin-top: 40px;
+}
+
+/* Contenu avec image */
+.content-with-image {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.content-text {
+    flex: 1.5;
+    font-size: 1.1em;
+}
+
+.content-image {
+    flex: 1;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    nav ul li {
+        display: inline-block;
+        margin: 5px;
+    }
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    .content-with-image {
+        flex-direction: column;
+    }
+    .contact-item {
+        display: block;
+        margin: 10px 0;
+    }
+    .formations-grid {
+        grid-template-columns: 1fr;
+    }
+}
